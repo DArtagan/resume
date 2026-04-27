@@ -1,109 +1,187 @@
 %-------------------------------------------------------------------------------
-%	SECTION TITLE
+%  SECTION TITLE
 %-------------------------------------------------------------------------------
 \cvsection{Experience}
 
-
 %-------------------------------------------------------------------------------
-%	CONTENT
+%  CONTENT
 %-------------------------------------------------------------------------------
 \begin{cventries}
 
-%---------------------------------------------------------
+  %---------------------------------------------------------
   \cventry%
-    {Senior Software Engineer} % Job title
-    {Oliver Wyman: Digital} % Organization
-    {Boston, Massachusetts} % Location
-    {October 2017 \-- Present} % Date(s)
-    {%
-      \begin{cvsentence}Oliver Wyman is a consulting company, where I had the opportunity to work across a broad range of projects and roles. Some highlights below:\end{cvsentence}
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {DevOps: wrote idiomatic containers, stood up many projects with CI/CD into Kubernetes. Member of Special Interest Group to spread best practices.} \\
-        Synthesized an analytics stack to give consulting teams a platform for development, workflow scheduling, data operations, and execution.
-        \item {Webservices: primarily backends for analytics and database operations, interfaced with as REST and GraphQL API services.} \\
-        Developed a system that continuously collects \& collates data on all of Digital projects/assets \-- providing InfoSec auditability, surfacing lost items, and decreasing seek time for the Sustaining organization.
-        \item {Data infrastructure: built tooling for consultants to use in ETL, workflow automation, schema management, and computational scaling.} \\
-        Built out a migration-based schema framework for a project with a major grocery retailer, eliminating database down-time.
-        \item {Sustaining: lead long-term operations for five projects in the mature phase of their lifecycle.}
-      \end{cvitems}
-    }
-    \begin{cventryskills}
-      \item Python
-      \item Kubernetes \& Kustomize
-      \item Jenkins Pipelines
-      \item Prefect
-      \item Node.js (Express \& Vue)
-      \item Flask
-      \item Alembic
-      \item MS SQL Server
-      \item PostgreSQL
-      \item GraphQL
-    \end{cventryskills}
+  {Senior Software Engineer $\rightarrow$ Staff Software Engineer} % Job title
+  {Ginkgo Bioworks: Biosecurity} % Organization
+  {Boston, Massachusetts} % Location
+  {March 2021 \-- November 2025} % Date(s)
+  {%
+    \begin{cvsentence}Tech lead for the software team behind a
+      HIPAA-compliant pathogen surveillance platform \-- initially
+      for COVID-19 in K-12 classrooms, then multipathogen
+      biosurveillance across 11 international airports. 15M+ samples
+      processed, \$150M+ revenue.
+    \end{cvsentence}
+    \begin{cvitems} % Description(s) of tasks/responsibilities
+    \item {Led a multi-year platform evolution from single-pathogen
+        COVID testing to multipathogen biosurveillance \-- refactoring
+        live production systems while preserving historical data,
+      existing visualizations, and CDC reporting pipelines.}
+    \item {Designed the Results \& Sample Refactor: decomposed a
+        monolithic data entity into three domain objects (sample,
+        procedure, result) with one-to-many relationships \-- enabling
+      multi-panel testing without combinatorial data duplication.}
+    \item {Grew from senior IC to de facto team lead for a team of
+        \textasciitilde 11 \-- running ceremonies, managing
+        stakeholders, and shielding the team from organizational churn.
+        Transitioned to a traditional tech lead role when a dedicated
+      manager was hired.}
+    \item {DevOps: rebuilt CI/CD pipelines around Docker with GitHub
+        Actions, codified infrastructure in Terraform (Auth0, AWS,
+        supporting services), migrated off legacy vendor systems, and
+      achieved 8x build performance on self-hosted runners.}
+    \item {Designed PHI removal from the platform as the business
+        shifted from individual diagnostics to aggregate
+        biosurveillance \-- balancing regulatory compliance, data
+      retention, and system simplification.}
+    \end{cvitems}
+  }
+  \begin{cventryskills}
+  \item Python (Flask, SQLAlchemy, Alembic)
+  \item PostgreSQL
+  \item React \& TypeScript
+  \item Terraform
+  \item GitHub Actions
+  \item Docker
+  \item AWS (EC2, S3, CloudFront)
+  \item Auth0
+  \item Aptible (HIPAA)
+  \item Grafana
+  \item Heap
+  \end{cventryskills}
 
-%---------------------------------------------------------
+  %---------------------------------------------------------
   \cventry%
-    {Software Engineer \-- Orion: NASA's next manned spacecraft} % Job title
-    {Lockheed Martin: Space Systems} % Organization
-    {Littleton, Colorado} % Location 
-    {September 2014 \-- September 2017} % Date(s)
-    {%
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Principle architect in moving Orion ground software from pen and paper to full test automation, empowering NASA requirement verification.}
-        \item {Built a Python/LaTeX-based engine for creating NASA deliverables, cutting months of paperwork for engineers (per deliverable) to a day.}
-        \item {Served as a subject matter expert for the flight software verification automation tiger team, sharing processes established while automating ground.}
-        \item {Built a recursive-descent compiler for a templating language similar to Jinja2.}
-        \item {Voltunteer for Code Quest, Lockheed Martin's computer programming competition for high school teams.}
-      \end{cvitems}
-    }
-    \begin{cventryskills}
-      \item Python packaging
-      \item Pytest
-      \item LaTeX
-      \item Sphinx
-      \item Linux
-      \item Vim
-      \item Perforce
-      \item JIRA
-      \item Jenkins
-      \item Agile
-      \item Test-driven development
-      \item Elastic stack
-    \end{cventryskills}
+  {Senior Software Engineer} % Job title
+  {Oliver Wyman: Digital} % Organization
+  {Boston, Massachusetts} % Location
+  {October 2017 \-- February 2021} % Date(s)
+  {%
+    \begin{cvsentence}Oliver Wyman is a consulting company, where I
+      had the opportunity to work across a broad range of projects
+      and roles. Some highlights below:
+    \end{cvsentence}
+    \begin{cvitems} % Description(s) of tasks/responsibilities
+    \item {DevOps: wrote idiomatic containers, stood up many projects
+        with CI/CD into Kubernetes. Member of Special Interest Group to
+      spread best practices.} \\
+      Synthesized an analytics stack to give consulting teams a
+      platform for development, workflow scheduling, data operations,
+      and execution.
+    \item {Webservices: primarily backends for analytics and database
+      operations, interfaced with as REST and GraphQL API services.} \\
+      Developed a system that continuously collects \& collates data
+      on all of Digital projects/assets \-- providing InfoSec
+      auditability, surfacing lost items, and decreasing seek time
+      for the Sustaining organization.
+    \item {Data infrastructure: built tooling for consultants to use
+        in ETL, workflow automation, schema management, and
+      computational scaling.} \\
+      Built out a migration-based schema framework for a project with
+      a major grocery retailer, eliminating database down-time.
+    \item {Sustaining: lead long-term operations for five projects in
+      the mature phase of their lifecycle.}
+    \end{cvitems}
+  }
+  \begin{cventryskills}
+  \item Python
+  \item Kubernetes \& Kustomize
+  \item Jenkins Pipelines
+  \item Prefect
+  \item Node.js (Express \& Vue)
+  \item Flask
+  \item Alembic
+  \item MS SQL Server
+  \item PostgreSQL
+  \item GraphQL
+  \end{cventryskills}
 
-%---------------------------------------------------------
+  %---------------------------------------------------------
   \cventry%
-    {Network Administrator (intern \& part-time)} % Job title
-    {Air Sciences, Inc.} % Organization
-    {Golden, Colorado} % Location
-    {November 2011 \-- March 2014} % Date(s)
-    {%
-      \begin{cvitems} % Description(s) of tasks/responsibilities
-        \item {Purchased, set up, and maintained servers, laptops, and networks for a 50 person company.}
-        \item {Introduced new processes such as a ticketing system, wiki, and KVM virtual machines \-- providing continuity and a knowledge base.}
-        \item {Interviewed and trained three new administrators \-- utilizing the wiki to create reusable materials to accelerate the new hire process going forward.}
-      \end{cvitems}
-    }
-    \begin{cventryskills}
-      \item Django
-      \item Git
-      \item Mediawiki
-      \item Network configuration
-      \item Linux administration
-      \item User support
-    \end{cventryskills}
+  {Software Engineer \-- Orion: NASA's next manned spacecraft} % Job title
+  {Lockheed Martin: Space Systems} % Organization
+  {Littleton, Colorado} % Location
+  {September 2014 \-- September 2017} % Date(s)
+  {%
+    \begin{cvitems} % Description(s) of tasks/responsibilities
+    \item {Principle architect in moving Orion ground software from
+        pen and paper to full test automation, empowering NASA
+      requirement verification.}
+    \item {Built a Python/LaTeX-based engine for creating NASA
+        deliverables, cutting months of paperwork for engineers (per
+      deliverable) to a day.}
+    \item {Served as a subject matter expert for the flight software
+        verification automation tiger team, sharing processes
+      established while automating ground.}
+    \item {Built a recursive-descent compiler for a templating
+      language similar to Jinja2.}
+    \item {Voltunteer for Code Quest, Lockheed Martin's computer
+      programming competition for high school teams.}
+    \end{cvitems}
+  }
+  \begin{cventryskills}
+  \item Python packaging
+  \item Pytest
+  \item LaTeX
+  \item Sphinx
+  \item Linux
+  \item Vim
+  \item Perforce
+  \item JIRA
+  \item Jenkins
+  \item Agile
+  \item Test-driven development
+  \item Elastic stack
+  \end{cventryskills}
 
-%---------------------------------------------------------
+  %---------------------------------------------------------
+  \cventry%
+  {Network Administrator (intern \& part-time)} % Job title
+  {Air Sciences, Inc.} % Organization
+  {Golden, Colorado} % Location
+  {November 2011 \-- March 2014} % Date(s)
+  {%
+    \begin{cvitems} % Description(s) of tasks/responsibilities
+    \item {Purchased, set up, and maintained servers, laptops, and
+      networks for a 50 person company.}
+    \item {Introduced new processes such as a ticketing system, wiki,
+      and KVM virtual machines \-- providing continuity and a knowledge base.}
+    \item {Interviewed and trained three new administrators \--
+        utilizing the wiki to create reusable materials to accelerate
+      the new hire process going forward.}
+    \end{cvitems}
+  }
+  \begin{cventryskills}
+  \item Django
+  \item Git
+  \item Mediawiki
+  \item Network configuration
+  \item Linux administration
+  \item User support
+  \end{cventryskills}
+
+  %---------------------------------------------------------
   \cvline%
-    {CSM Alumni Association} % Organization
-    {Software Developer \-- Website, newsletter, graphics, audio, video} % Job description
-    {August 2010 \-- April 2014} % Date(s)
-    %\begin{cventryskills}
-    %  \item Wordpress
-    %  \item PHP
-    %  \item HTML \& CSS
-    %  \item Audacity audio editing
-    %  \item GIMP image manipulation
-    %  \item Web design
-    %\end{cventryskills}
-%---------------------------------------------------------
+  {CSM Alumni Association} % Organization
+  {Software Developer \-- Website, newsletter, graphics, audio,
+  video} % Job description
+  {August 2010 \-- April 2014} % Date(s)
+  %\begin{cventryskills}
+  %  \item Wordpress
+  %  \item PHP
+  %  \item HTML \& CSS
+  %  \item Audacity audio editing
+  %  \item GIMP image manipulation
+  %  \item Web design
+  %\end{cventryskills}
+  %---------------------------------------------------------
 \end{cventries}
