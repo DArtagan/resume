@@ -3,6 +3,7 @@
 {
   packages = [
     pkgs.git
+    pkgs.tex-fmt
   ];
 
   languages.texlive = {
@@ -15,5 +16,11 @@
     ];
   };
 
-  git-hooks.hooks.latexindent.enable = true;
+  git-hooks.hooks.tex-fmt = {
+    enable = true;
+    name = "tex-fmt --nowrap";
+    entry = "tex-fmt";
+    types = [ "tex" ];
+    language = "system";
+  };
 }
