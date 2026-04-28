@@ -6,9 +6,23 @@
 {
   packages = [
     pkgs.git
+    pkgs.pandoc
     pkgs.tectonic
     pkgs.tex-fmt
+    pkgs.texlivePackages.latexpand
   ];
+
+  languages.python = {
+    enable = true;
+    uv = {
+      enable = true;
+      sync.enable = true;
+    };
+    lsp = {
+      enable = true;
+      package = pkgs.ty;
+    };
+  };
 
   git-hooks.hooks = {
     tex-fmt = {
@@ -22,7 +36,6 @@
     deadnix.enable = true;
     flake-checker.enable = true;
     nixfmt.enable = true;
-    shellcheck.enable = true;
     statix.enable = true;
     trim-trailing-whitespace.enable = true;
   };
