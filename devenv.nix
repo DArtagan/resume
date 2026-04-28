@@ -1,4 +1,7 @@
-{ pkgs, lib, config, inputs, ... }:
+{
+  pkgs,
+  ...
+}:
 
 {
   packages = [
@@ -7,21 +10,20 @@
     pkgs.tex-fmt
   ];
 
-  #languages.texlive = {
-  #  enable = true;
-  #  lsp.enable = true;
-  #  #packages = [
-  #  #  "enumitem"
-  #  #  "ifmtarg"
-  #  #  "xifthen"
-  #  #];
-  #};
-
-  git-hooks.hooks.tex-fmt = {
-    enable = true;
-    name = "tex-fmt --nowrap";
-    entry = "tex-fmt";
-    types = [ "tex" ];
-    language = "system";
+  git-hooks.hooks = {
+    tex-fmt = {
+      enable = true;
+      name = "tex-fmt --nowrap";
+      entry = "tex-fmt";
+      types = [ "tex" ];
+      language = "system";
+    };
+    end-of-file-fixer.enable = true;
+    deadnix.enable = true;
+    flake-checker.enable = true;
+    nixfmt.enable = true;
+    shellcheck.enable = true;
+    statix.enable = true;
+    trim-trailing-whitespace.enable = true;
   };
 }
