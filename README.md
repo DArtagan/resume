@@ -44,14 +44,23 @@ You can see [PDF](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/e
 
 #### Requirements
 
-A full TeX distribution is assumed. [Various distributions for different operating systems (Windows, Mac, \*nix) are available](http://tex.stackexchange.com/q/55437) but TeX Live is recommended.
+This repo uses [devenv](https://devenv.sh) to set up the local development environment, which provides [Tectonic](https://tectonic-typesetting.github.io) and `tex-fmt`. With [devenv](https://devenv.sh) and [direnv](https://direnv.net) installed, run `direnv allow` once in the repo root to activate the shell.
 
-This repo is also configured to use [devenv](https://devenv.sh), which provides a full environment including XeLaTeX. With [devenv](https://devenv.sh) and [direnv](https://direnv.net) installed, run `direnv allow` once in the repo root to activate the shell.
+Alternatively, a full TeX distribution (e.g. TeX Live) can be used — see [installation options](http://tex.stackexchange.com/q/55437).
 
 #### Usage
 
+Using `tectonic`:
+
 ```bash
-xelatex resume.tex      # produces resume.pdf
+tectonic resume.tex       # produces resume.pdf (auto-fetches required packages)
+tectonic cover_letter.tex # produces cover_letter.pdf
+```
+
+With a full TeX distribution:
+
+```bash
+xelatex resume.tex        # produces resume.pdf
 xelatex cover_letter.tex  # produces cover_letter.pdf
 ```
 

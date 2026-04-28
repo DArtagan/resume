@@ -9,12 +9,12 @@ This is a LaTeX resume built on the [Awesome CV](https://github.com/posquit0/Awe
 ## Commands
 
 ```bash
-xelatex resume.tex        # compile → resume.pdf
-xelatex cover_letter.tex  # compile → cover_letter.pdf
-tex-fmt <file>.tex        # format a .tex file (runs automatically as a pre-commit hook)
+tectonic resume.tex        # compile → resume.pdf (auto-fetches required packages)
+tectonic cover_letter.tex  # compile → cover_letter.pdf
+tex-fmt <file>.tex         # format a .tex file (runs automatically as a pre-commit hook)
 ```
 
-The devenv shell (activated via `direnv allow`) provides XeLaTeX, TeX Live packages, and `tex-fmt`.
+The devenv shell (activated via `direnv allow`) provides Tectonic, and `tex-fmt`.
 
 ## Structure
 

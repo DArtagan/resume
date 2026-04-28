@@ -3,18 +3,19 @@
 {
   packages = [
     pkgs.git
+    pkgs.tectonic
     pkgs.tex-fmt
   ];
 
-  languages.texlive = {
-    enable = true;
-    lsp.enable = true;
-    packages = [
-      "enumitem"
-      "ifmtarg"
-      "xifthen"
-    ];
-  };
+  #languages.texlive = {
+  #  enable = true;
+  #  lsp.enable = true;
+  #  #packages = [
+  #  #  "enumitem"
+  #  #  "ifmtarg"
+  #  #  "xifthen"
+  #  #];
+  #};
 
   git-hooks.hooks.tex-fmt = {
     enable = true;
