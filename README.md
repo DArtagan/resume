@@ -44,18 +44,18 @@ You can see [PDF](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/e
 
 #### Requirements
 
-A full TeX distribution is assumed.  [Various distributions for different operating systems (Windows, Mac, \*nix) are available](http://tex.stackexchange.com/q/55437) but TeX Live is recommended.
-You can [install TeX from upstream](http://tex.stackexchange.com/q/1092) (recommended; most up-to-date) or use `sudo apt-get install texlive-full` if you really want that.  (It's generally a few years behind.)
+A full TeX distribution is assumed. [Various distributions for different operating systems (Windows, Mac, \*nix) are available](http://tex.stackexchange.com/q/55437) but TeX Live is recommended.
+
+This repo is also configured to use [devenv](https://devenv.sh), which provides a full environment including XeLaTeX. With [devenv](https://devenv.sh) and [direnv](https://direnv.net) installed, run `direnv allow` once in the repo root to activate the shell.
 
 #### Usage
 
-At a command prompt, run
-
 ```bash
-$ xelatex {your-cv}.tex
+xelatex resume.tex      # produces resume.pdf
+xelatex cover_letter.tex  # produces cover_letter.pdf
 ```
 
-This should result in the creation of ``{your-cv}.pdf``
+`tex-fmt` runs automatically as a pre-commit git hook to format `.tex` files.
 
 
 ## <a name="credit">Credit
