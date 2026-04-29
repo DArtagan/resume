@@ -43,9 +43,9 @@ origin countries covered). 15M+ samples processed, \$733M revenue.
   individual diagnostics to aggregate biosurveillance -- balancing
   regulatory compliance, data retention, and system simplification.
 
-*Skills: Python (Flask, SQLAlchemy, Alembic) · PostgreSQL · Terraform ·
-GitHub Actions · Docker · Nix · AWS (EC2, S3, CloudFront) · Auth0 ·
-Aptible · Grafana · New Relic · Heap*
+*Skills: Flask · SQLAlchemy · PostgreSQL · Terraform · GitHub Actions ·
+Docker · Nix · AWS EC2/S3/CloudFront · Auth0 · Aptible · Grafana · New
+Relic · Heap*
 
 ## Oliver Wyman: Digital
 
@@ -117,16 +117,8 @@ graphics, audio, video \| August 2010 -- April 2014
 **B.S. in Engineering, Mechanical Emphasis --- Computer Science and
 Economics minors** \| Golden, Colorado \| December 2013
 
-- NASA Lunabotics Competition: built a full-size regolith collecting
-  robot and competed with international teams at the Kennedy Space
-  Center.
-
-- FIRST Robotics Competitions: Mentored high school students in
-  engineering principles. Refereed Colorado regional competitions (FRC
-  and FLL).
-
-*Skills: SolidWorks (FEA) · C++ · Java · Python · Machine shop ·
-Feedback controls · Git · Arduino · MATLAB · LabVIEW*
+Capstone: NASA Lunabotics Competition: a full-size regolith collecting
+robot and competed with international teams at the Kennedy Space Center.
 
 # Projects
 
