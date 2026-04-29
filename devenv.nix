@@ -42,7 +42,7 @@
       enable = true;
       name = "generate resumes";
       entry = "devenv tasks run resume";
-      types = [
+      types_or = [
         "tex"
         "python"
       ];

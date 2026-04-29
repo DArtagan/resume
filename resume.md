@@ -99,11 +99,8 @@ graphics, audio, video | August 2010 -- April 2014
 
 **Colorado School of Mines (CSM)** -- B.S. Engineering, Mechanical
 Emphasis --- Computer Science and Economics minors | December 2013
-
-::: descriptionstyle
 Capstone: NASA Lunabotics Competition: built a regolith mining robot and
 competed with international teams at the Kennedy Space Center.
-:::
 
 # Projects
 
