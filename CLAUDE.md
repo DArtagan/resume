@@ -30,3 +30,45 @@ The devenv shell (activated via `direnv allow`) provides Tectonic, and `tex-fmt`
 - The highlight color is `awesome-red`; change via `\colorlet{awesome}{...}` in `resume.tex`
 - Sections are toggled by commenting/uncommenting `\input{resume/<section>.tex}` lines
 - `tex-fmt --nowrap` runs automatically on every `git commit` via a devenv git hook
+
+## Markdown generation
+
+```bash
+python3 gen_markdown.py resume.tex > resume.md
+```
+
+`gen_markdown.py` is the full pipeline: it runs `latexpand` to flatten `\input` includes,
+preprocesses the LaTeX (stripping awesome-cv preamble commands, replacing custom environments,
+expanding custom macros via Python), calls pandoc internally to convert the preprocessed LaTeX to
+markdown, then prepends a markdown header block (name, contact, quote) extracted from the preamble
+fields. Stdin is also accepted if no file argument is given (e.g. `latexpand resume.tex | python3
+gen_markdown.py`).
+
+For debugging pandoc parse errors, `--dump-latex` skips pandoc and emits the preprocessed LaTeX
+wrapped in a minimal `article` preamble — suitable for passing to tectonic for clearer diagnostics:
+
+```bash
+python3 gen_markdown.py --dump-latex resume.tex > /tmp/debug.tex
+tectonic /tmp/debug.tex   # tectonic's errors are often more informative than pandoc's
+```
+
+Run the test suite with:
+
+```bash
+pytest
+```
+
+## Testing conventions
+
+- **TDD**: write a failing test before making any code change.
+- `gen_markdown.py` exposes named functions (`clean_tex`, `extract_header`, `strip_preamble`,
+  `replace_environments`, `inject_macros`, `process`). Test each at the lowest level that makes
+  sense — prefer unit tests of the individual functions over tests of `process()`.
+- **`process()` tests are integration tests**: they verify that the pipeline stages compose
+  correctly, not that each stage works in isolation.
+- **Use targeted inline strings**, not `latexpand("resume.tex")`, in unit and integration tests.
+  Any specific behavior should be exercised via a purpose-built minimal LaTeX fragment so the
+  test doesn't silently break when resume content changes.
+- **Full round-trip tests** (`test_full_resume_*`) may use `latexpand("resume.tex")`. They check
+  that the pipeline runs end-to-end without error and produces structurally correct output — not
+  that particular resume content is present.
