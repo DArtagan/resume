@@ -70,7 +70,7 @@
       exec = "python gen_markdown.py resume.tex > resume.md";
     };
     "resume:pdf" = {
-      exec = "tectonic resume.tex";
+      exec = "SOURCE_DATE_EPOCH=${toString builtins.currentTime} tectonic resume.tex";
     };
   };
 }
