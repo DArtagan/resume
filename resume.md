@@ -1,6 +1,6 @@
 # William H. Weiskopf, IV
 
-91 Westland Avenue · Boston, Massachusetts, 02115 · United States of America
+Cambridge, Massachusetts, 02139 · United States of America
 
 Phone: (+1) 720-663-9455 | Email: william@weiskopf.me | GitHub: github.com/dartagan | LinkedIn: linkedin.com/in/whweiskopf
 
@@ -11,13 +11,13 @@ Phone: (+1) 720-663-9455 | Email: william@weiskopf.me | GitHub: github.com/darta
 
 ## Ginkgo Bioworks: Biosecurity
 
-**Senior Software Engineer → Staff Software Engineer** \| Boston,
-Massachusetts \| March 2021 -- November 2025
+**Staff Software Engineer** \| Boston, Massachusetts \| March 2021 --
+November 2025
 
 Tech lead for the software team behind a HIPAA-compliant pathogen
 surveillance platform -- initially for COVID-19 in K-12 classrooms, then
-multipathogen biosurveillance across 11 international airports. 15M+
-samples processed, \$150M+ revenue.
+multipathogen biosurveillance across 11 international airports (126
+origin countries covered). 15M+ samples processed, \$733M revenue.
 
 - Led a multi-year platform evolution from single-pathogen COVID testing
   to multipathogen biosurveillance -- refactoring live production
@@ -35,7 +35,7 @@ samples processed, \$150M+ revenue.
   when a dedicated manager was hired.
 
 - DevOps: rebuilt CI/CD pipelines around Docker with GitHub Actions,
-  codified infrastructure in Terraform (Auth0, AWS, supporting
+  codified infrastructure in Terraform (Auth0, AWS, Aptible, supporting
   services), migrated off legacy vendor systems, and achieved 8x build
   performance on self-hosted runners.
 
@@ -43,9 +43,9 @@ samples processed, \$150M+ revenue.
   individual diagnostics to aggregate biosurveillance -- balancing
   regulatory compliance, data retention, and system simplification.
 
-*Skills: Python (Flask, SQLAlchemy, Alembic) · PostgreSQL · React &
-TypeScript · Terraform · GitHub Actions · Docker · AWS (EC2, S3,
-CloudFront) · Auth0 · Aptible (HIPAA) · Grafana · Heap*
+*Skills: Python (Flask, SQLAlchemy, Alembic) · PostgreSQL · Terraform ·
+GitHub Actions · Docker · Nix · AWS (EC2, S3, CloudFront) · Auth0 ·
+Aptible · Grafana · New Relic · Heap*
 
 ## Oliver Wyman: Digital
 
@@ -84,7 +84,7 @@ GraphQL*
 **Software Engineer -- Orion: NASA's next manned spacecraft** \|
 Littleton, Colorado \| September 2014 -- September 2017
 
-- Principle architect in moving Orion ground software from pen and paper
+- Principal architect in moving Orion ground software from pen and paper
   to full test automation, empowering NASA requirement verification.
 
 - Built a Python/LaTeX-based engine for creating NASA deliverables,
@@ -97,7 +97,7 @@ Littleton, Colorado \| September 2014 -- September 2017
 - Built a recursive-descent compiler for a templating language similar
   to Jinja2.
 
-- Voltunteer for Code Quest, Lockheed Martin's computer programming
+- Volunteer for Code Quest, Lockheed Martin's computer programming
   competition for high school teams.
 
 *Skills: Python packaging · Pytest · LaTeX · Sphinx · Linux · Vim ·
@@ -122,7 +122,7 @@ Economics minors** \| Golden, Colorado \| December 2013
   Center.
 
 - FIRST Robotics Competitions: Mentored high school students in
-  engineering princples. Refereed Colorado regional competitions (FRC
+  engineering principles. Refereed Colorado regional competitions (FRC
   and FLL).
 
 *Skills: SolidWorks (FEA) · C++ · Java · Python · Machine shop ·
@@ -130,23 +130,12 @@ Feedback controls · Git · Arduino · MATLAB · LabVIEW*
 
 # Projects
 
-## [SingToWho.site](https://singtowho.site)
-
-**June 2020**
-
-A COVID-19 inpired hack to keep people safe and engaged during the
-pandemic. When washing your hands, who should you sing happy birthday
-to?
-
-*Skills: HTML, Javascript, CSS · Google Cloud Storage · Cloudflare DNS ·
-Skeleton CSS*
-
-## Containerized Server
+## Extensive Homelab
 
 **2015 -- Present**
 
 Homelab for experimenting with containers, virtualization, and services
 -- with archive-class robust file-integrity protections.
 
-*Skills: Docker (RancherOS) · ZFS · Traefik · RAID · btrfs · Samba ·
-Mumble · Plex · Borg backup · Beets · NGINX*
+*Skills: Proxmox · Kubernetes · ZFS · Nix · Terraform · Ansible · Samba
+· Mumble · Plex · Borg backup · Beets · NGINX*

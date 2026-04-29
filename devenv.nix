@@ -48,6 +48,23 @@
     };
   };
 
+  #processes = {
+  #  build-resume-markdown = {
+  #    exec = "python gen_markdown.py resume.tex > resume.md";
+  #    watch = {
+  #      paths = [ ./. ./resume ];
+  #      extensions = [ "tex" ];
+  #    };
+  #  };
+  #  build-resume-pdf = {
+  #    exec = "tectonic resume.tex";
+  #    watch = {
+  #      paths = [ ./. ./resume ];
+  #      extensions = [ "tex" ];
+  #    };
+  #  };
+  #};
+
   tasks = {
     "resume:markdown" = {
       exec = "python gen_markdown.py resume.tex > resume.md";
