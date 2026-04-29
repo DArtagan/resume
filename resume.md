@@ -16,11 +16,11 @@ Flask · SQLAlchemy · PostgreSQL · Terraform · GitHub Actions · Docker · Ni
 **Staff Software Engineer**\
 Boston, Massachusetts | March 2021 -- November 2025
 
-Tech lead for the software team behind a HIPAA-compliant pathogen
-surveillance platform -- initially for COVID-19 in thousands of K-12
-classrooms & lab partners across 18 states, then multipathogen
-biosurveillance across 11 international airports (126 origin countries).
-15M+ samples processed, \$733M revenue.
+Tech lead for a HIPAA-compliant pathogen surveillance platform --
+initially for COVID-19 in thousands of K-12 classrooms & lab partners
+across 18 states, then multipathogen biosurveillance across 11
+international airports (126 origin countries). 15M+ samples processed,
+\$733M revenue.
 
 - Led a multi-year platform evolution from single-pathogen COVID testing
   to multipathogen biosurveillance -- refactoring live production
