@@ -16,6 +16,7 @@ from gen_markdown import (
     latexpand as gen_latexpand,
     process,
     replace_environments,
+    run_pandoc,
     strip_preamble,
 )
 
@@ -23,18 +24,6 @@ from gen_markdown import (
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
-
-
-def pandoc(latex: str) -> str:
-    """Run latex through pandoc and return markdown output."""
-    result = subprocess.run(
-        ["pandoc", "-f", "latex", "-t", "markdown"],
-        input=latex,
-        capture_output=True,
-        text=True,
-        check=True,
-    )
-    return result.stdout
 
 
 def latexpand(path: str) -> str:
@@ -51,7 +40,7 @@ def latexpand(path: str) -> str:
 
 def pipeline(latex: str) -> str:
     """Run latex through the full gen-markdown pipeline and return markdown."""
-    return pandoc(process(latex))
+    return run_pandoc(process(latex))
 
 
 # ---------------------------------------------------------------------------
@@ -194,9 +183,10 @@ def test_extract_header_contact():
     assert "LinkedIn: linkedin.com/in/whweiskopf" in result
 
 
-def test_extract_header_quote():
+def test_extract_header_no_quote():
     result = extract_header(SAMPLE_PREAMBLE)
-    assert '"A quote." -Author' in result
+    assert "A quote." not in result
+    assert ">" not in result
 
 
 def test_extract_header_name_is_h1():
@@ -305,7 +295,7 @@ def test_replace_environments_cvitems_to_itemize():
     assert r"\begin{cvitems}" not in result
 
 
-def test_replace_environments_cventryskills_to_skills_line():
+def test_replace_environments_cventryskills_removed():
     text = textwrap.dedent(r"""
         \begin{cventryskills}
         \item Python
@@ -315,8 +305,55 @@ def test_replace_environments_cventryskills_to_skills_line():
     """)
     result = replace_environments(text)
     assert r"\begin{cventryskills}" not in result
-    assert "Skills: Python · PostgreSQL · Docker" in result
-    assert r"\textit" in result
+    assert "Skills:" not in result
+    assert "Python" not in result
+
+
+# ---------------------------------------------------------------------------
+# collect_skills
+# ---------------------------------------------------------------------------
+
+
+def test_collect_skills_single_block():
+    from gen_markdown import collect_skills
+    text = textwrap.dedent(r"""
+        \begin{cventryskills}
+        \item Python
+        \item Docker
+        \end{cventryskills}
+    """)
+    assert collect_skills(text) == ["Python", "Docker"]
+
+
+def test_collect_skills_multiple_blocks_dedup():
+    from gen_markdown import collect_skills
+    text = textwrap.dedent(r"""
+        \begin{cventryskills}
+        \item Python
+        \item Docker
+        \end{cventryskills}
+        Some other content.
+        \begin{cventryskills}
+        \item Kubernetes
+        \item Python
+        \end{cventryskills}
+    """)
+    assert collect_skills(text) == ["Python", "Docker", "Kubernetes"]
+
+
+def test_collect_skills_cleans_latex():
+    from gen_markdown import collect_skills
+    text = textwrap.dedent(r"""
+        \begin{cventryskills}
+        \item Kubernetes \& Kustomize
+        \end{cventryskills}
+    """)
+    assert collect_skills(text) == ["Kubernetes & Kustomize"]
+
+
+def test_collect_skills_empty():
+    from gen_markdown import collect_skills
+    assert collect_skills("no skills here") == []
 
 
 # ---------------------------------------------------------------------------
@@ -376,6 +413,46 @@ def test_expand_macros_cventry_multiline_fifth_arg():
     assert r"\textbf{Engineer}" in result
     assert "Intro text." in result
     assert r"\begin{itemize}" in result
+
+
+def test_expand_macros_cventry_position_on_own_line():
+    result = expand_macros(r"\cventry{Senior Eng}{Acme}{Boston}{2020 -- 2024}{Desc.}")
+    lines = result.split("\n")
+    position_line = next(l for l in lines if "Senior Eng" in l)
+    assert "Boston" not in position_line
+    assert "2020" not in position_line
+
+
+def test_expand_macros_cventry_location_date_on_same_line():
+    result = expand_macros(r"\cventry{Senior Eng}{Acme}{Boston}{2020 -- 2024}{Desc.}")
+    lines = result.split("\n")
+    loc_date_line = next(l for l in lines if "Boston" in l)
+    assert "2020" in loc_date_line
+
+
+
+def test_pipeline_cventry_position_on_own_line():
+    doc = minimal_doc(r"\cventry{Senior Engineer}{Acme Corp}{Boston, MA}{2020 -- 2024}{}")
+    result = pipeline(doc)
+    lines = result.strip().split("\n")
+    pos_line = next(l for l in lines if "**Senior Engineer**" in l)
+    assert "Boston" not in pos_line
+    assert "2020" not in pos_line
+
+
+def test_pipeline_cventry_location_date_on_same_line():
+    doc = minimal_doc(r"\cventry{Senior Engineer}{Acme Corp}{Boston, MA}{2020 -- 2024}{}")
+    result = pipeline(doc)
+    lines = result.strip().split("\n")
+    loc_line = next(l for l in lines if "Boston, MA" in l)
+    assert "2020" in loc_line
+
+
+def test_pipeline_cventry_no_escaped_pipe():
+    doc = minimal_doc(r"\cventry{Senior Engineer}{Acme Corp}{Boston, MA}{2020 -- 2024}{}")
+    result = pipeline(doc)
+    assert r"\|" not in result
+    assert "|" in result
 
 
 def test_expand_macros_cvhonor_empty_args():
@@ -512,7 +589,7 @@ def test_pipeline_item_with_double_backslash_continuation():
     assert "Second item" in result
 
 
-def test_pipeline_cventryskills_renders_italic():
+def test_pipeline_cventryskills_removed_from_body():
     doc = minimal_doc(
         textwrap.dedent(r"""
             \begin{cventryskills}
@@ -522,7 +599,8 @@ def test_pipeline_cventryskills_renders_italic():
         """)
     )
     result = pipeline(doc)
-    assert "*Skills: Python · Docker*" in result
+    assert "*Skills:" not in result
+    assert "cventryskills" not in result
 
 
 def test_pipeline_cvline():
@@ -643,10 +721,16 @@ def test_process_documentclass_stripped():
 
 
 def full_pipeline(tex_source: str) -> str:
-    """Mimic what main() does: header markdown prepended to pandoc(process(source))."""
+    """Mimic what main() does: header + skills section + pandoc body."""
+    from gen_markdown import collect_skills, clean_tex
     header = extract_header(tex_source)
-    body = pandoc(process(tex_source))
-    return header + "\n" + body
+    skills = collect_skills(clean_tex(tex_source))
+    body = run_pandoc(process(tex_source))
+    parts = [header, ""]
+    if skills:
+        parts += ["# Skills", "", " · ".join(skills), ""]
+    parts.append(body)
+    return "\n".join(parts)
 
 
 def test_full_resume_sections_present():
@@ -679,9 +763,19 @@ def test_full_resume_no_cventryskills_env():
     assert "cventryskills" not in md
 
 
-def test_full_resume_skills_lines_italic():
+def test_full_resume_has_skills_section():
     md = full_pipeline(latexpand("resume.tex"))
-    assert "*Skills:" in md
+    assert "# Skills" in md
+
+
+def test_full_resume_skills_before_experience():
+    md = full_pipeline(latexpand("resume.tex"))
+    assert md.index("# Skills") < md.index("# Experience")
+
+
+def test_full_resume_no_inline_skills():
+    md = full_pipeline(latexpand("resume.tex"))
+    assert "*Skills:" not in md
 
 
 # ---------------------------------------------------------------------------

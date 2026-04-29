@@ -78,10 +78,19 @@ def expand_macros(text):
     text = _expand_macro(text, "cvsubsection", 1,
         lambda a: f"\\subsection{{{a[0]}}}")
     def _cventry(a):
-        parts = [p for p in (a[0], a[2], a[3]) if p.strip()]
-        line = " | ".join(f"\\textbf{{{parts[0]}}}" if i == 0 else parts[i]
-                          for i, _ in enumerate(parts)) if parts else ""
-        return f"\\subsection{{{a[1]}}}\n{line}\n\n{a[4]}"
+        position = a[0].strip()
+        location = a[2].strip()
+        date = a[3].strip()
+        lines = [f"\\subsection{{{a[1]}}}"]
+        if position:
+            suffix = r"\\" if any(p for p in (location, date) if p) else ""
+            lines.append(f"\\textbf{{{position}}}{suffix}")
+        loc_date = [p for p in (location, date) if p]
+        if loc_date:
+            lines.append(" | ".join(loc_date))
+        lines.append("")
+        lines.append(a[4])
+        return "\n".join(lines)
     text = _expand_macro(text, "cventry", 5, _cventry)
     text = _expand_macro(text, "cvline", 3,
         lambda a: f"\\textbf{{{a[0]}}} -- {a[1]} | {a[2]}")
@@ -109,6 +118,7 @@ def clean_tex(text):
     text = text.replace(r"\enspace", " ")
     text = text.replace(r"\quad", " ")
     text = re.sub(r"\\'\{(\w)\}", r"\1", text)  # \'{e} -> e
+    text = text.replace(r"\&", "&")
     # Leave \$ as-is so pandoc's LaTeX reader converts it to a literal $
     text = re.sub(r"``(.*?)''", r'"\1"', text, flags=re.DOTALL)
     text = text.replace("``", '"')  # unmatched open-quote
@@ -139,12 +149,6 @@ def extract_header(text):
             if content:
                 fields[cmd] = content
 
-    m = re.search(r"\\quote\s*\{", text)
-    if m:
-        content, _ = extract_arg(text, m.end() - 1)
-        if content:
-            fields["quote"] = content
-
     header_lines = []
     if "name" in fields:
         header_lines.append(f"# {clean_tex(fields['name'])}")
@@ -167,10 +171,6 @@ def extract_header(text):
         contact.append(fields["homepage"])
     if contact:
         header_lines.append(" | ".join(contact))
-        header_lines.append("")
-
-    if "quote" in fields:
-        header_lines.append(f"> {clean_tex(fields['quote'])}")
         header_lines.append("")
 
     return "\n".join(header_lines)
@@ -224,23 +224,29 @@ def replace_environments(text):
     text = re.sub(r"\\begin\{cvitems\}", r"\\begin{itemize}", text)
     text = re.sub(r"\\end\{cvitems\}", r"\\end{itemize}", text)
 
-    # cventryskills -> collect items, emit as italic skills line
-    def replace_skills(m):
-        body = m.group(1)
-        items = re.findall(r"\\item\s+(.*?)(?=\\item|\Z)", body, re.DOTALL)
-        skills = [s.strip() for s in items if s.strip()]
-        if skills:
-            return "\n" + r"\textit{Skills: " + " · ".join(skills) + "}" + "\n"
-        return ""
-
+    # Remove cventryskills blocks entirely (skills are consolidated separately)
     text = re.sub(
-        r"\\begin\{cventryskills\}(.*?)\\end\{cventryskills\}",
-        replace_skills,
+        r"\\begin\{cventryskills\}.*?\\end\{cventryskills\}",
+        "",
         text,
         flags=re.DOTALL,
     )
 
     return text
+
+
+def collect_skills(text):
+    """Extract all skills from cventryskills blocks, deduplicated in first-appearance order."""
+    seen = {}
+    for block in re.findall(
+        r"\\begin\{cventryskills\}(.*?)\\end\{cventryskills\}", text, re.DOTALL
+    ):
+        items = re.findall(r"\\item\s+(.*?)(?=\\item|\Z)", block, re.DOTALL)
+        for raw in items:
+            skill = clean_tex(raw.strip())
+            if skill and skill not in seen:
+                seen[skill] = True
+    return list(seen.keys())
 
 
 def process(text):
@@ -250,6 +256,18 @@ def process(text):
     text = replace_environments(text)
     text = expand_macros(text)
     return text
+
+
+def run_pandoc(latex_text):
+    """Convert preprocessed LaTeX to markdown, then unescape pandoc-escaped pipes."""
+    result = subprocess.run(
+        ["pandoc", "-f", "latex", "-t", "markdown"],
+        input=latex_text,
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    return result.stdout.replace(r"\|", "|")
 
 
 def latexpand(path):
@@ -278,17 +296,17 @@ def main():
         print(r"\end{document}")
         return
     header = extract_header(text)
-    result = subprocess.run(
-        ["pandoc", "-f", "latex", "-t", "markdown"],
-        input=processed,
-        capture_output=True,
-        text=True,
-        check=True,
-    )
+    skills = collect_skills(clean_tex(text))
+    md_body = run_pandoc(processed)
     if header:
         print(header)
         print()
-    print(result.stdout, end="")
+    if skills:
+        print("# Skills")
+        print()
+        print(" · ".join(skills))
+        print()
+    print(md_body, end="")
 
 
 if __name__ == "__main__":
