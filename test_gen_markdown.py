@@ -384,6 +384,15 @@ def test_expand_macros_cvline():
     assert "2010 -- 2014" in result
 
 
+def test_expand_macros_cvline_trailing_newline():
+    # Content after \cvline (e.g. a descriptionstyle sentence) must start on a new paragraph.
+    result = expand_macros(
+        r"\cvline{CSM}{B.S. Engineering}{December 2013}" + "\nCapstone sentence."
+    )
+    # The cvline output and the following sentence must be separated by a blank line.
+    assert "\n\nCapstone sentence." in result
+
+
 def test_expand_macros_cventry_basic():
     result = expand_macros(r"\cventry{Senior Eng}{Acme}{Boston}{2020 -- 2024}{Desc.}")
     assert r"\subsection{Acme}" in result

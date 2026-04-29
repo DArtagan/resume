@@ -93,7 +93,7 @@ def expand_macros(text):
         return "\n".join(lines)
     text = _expand_macro(text, "cventry", 5, _cventry)
     text = _expand_macro(text, "cvline", 3,
-        lambda a: f"\\textbf{{{a[0]}}} -- {a[1]} | {a[2]}")
+        lambda a: f"\\textbf{{{a[0]}}} -- {a[1]} | {a[2]}\n")
     def _cvhonor(a):
         parts = [p for p in [a[0], a[1], a[2]] if p.strip()]
         line = ", ".join(f"\\textbf{{{parts[0]}}}" if i == 0 else parts[i]
