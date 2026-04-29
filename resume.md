@@ -104,23 +104,8 @@ Littleton, Colorado \| September 2014 -- September 2017
 Perforce · JIRA · Jenkins · Agile · Test-driven development · Elastic
 stack*
 
-## Air Sciences, Inc.
-
-**Network Administrator (intern & part-time)** \| Golden, Colorado \|
+**Air Sciences, Inc.** -- Network Administrator (intern & part-time) \|
 November 2011 -- March 2014
-
-- Purchased, set up, and maintained servers, laptops, and networks for a
-  50 person company.
-
-- Introduced new processes such as a ticketing system, wiki, and KVM
-  virtual machines -- providing continuity and a knowledge base.
-
-- Interviewed and trained three new administrators -- utilizing the wiki
-  to create reusable materials to accelerate the new hire process going
-  forward.
-
-*Skills: Django · Git · Mediawiki · Network configuration · Linux
-administration · User support*
 
 **CSM Alumni Association** -- Software Developer -- Website, newsletter,
 graphics, audio, video \| August 2010 -- April 2014
