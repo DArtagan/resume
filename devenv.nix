@@ -42,7 +42,10 @@
       enable = true;
       name = "generate resumes";
       entry = "devenv tasks run resume";
-      types = [ "tex" ];
+      types = [
+        "tex"
+        "python"
+      ];
       language = "system";
       pass_filenames = false;
     };
