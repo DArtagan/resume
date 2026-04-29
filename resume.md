@@ -97,9 +97,6 @@ Littleton, Colorado \| September 2014 -- September 2017
 - Built a recursive-descent compiler for a templating language similar
   to Jinja2.
 
-- Volunteer for Code Quest, Lockheed Martin's computer programming
-  competition for high school teams.
-
 *Skills: Python packaging · Pytest · LaTeX · Sphinx · Linux · Vim ·
 Perforce · JIRA · Jenkins · Agile · Test-driven development · Elastic
 stack*
