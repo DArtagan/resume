@@ -27,8 +27,8 @@
   git-hooks.hooks = {
     tex-fmt = {
       enable = true;
-      name = "tex-fmt --nowrap";
-      entry = "tex-fmt";
+      name = "tex-fmt";
+      entry = "tex-fmt --nowrap";
       types = [ "tex" ];
       language = "system";
     };
@@ -38,5 +38,22 @@
     nixfmt.enable = true;
     statix.enable = true;
     trim-trailing-whitespace.enable = true;
+    resumes = {
+      enable = true;
+      name = "generate resumes";
+      entry = "devenv tasks run resume";
+      types = [ "tex" ];
+      language = "system";
+      pass_filenames = false;
+    };
+  };
+
+  tasks = {
+    "resume:markdown" = {
+      exec = "python gen_markdown.py resume.tex > resume.md";
+    };
+    "resume:pdf" = {
+      exec = "tectonic resume.tex";
+    };
   };
 }
