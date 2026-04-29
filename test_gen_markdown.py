@@ -295,6 +295,14 @@ def test_replace_environments_cvitems_to_itemize():
     assert r"\begin{cvitems}" not in result
 
 
+def test_replace_environments_removes_descriptionstyle():
+    text = r"\begin{descriptionstyle}Some description text.\end{descriptionstyle}"
+    result = replace_environments(text)
+    assert r"\begin{descriptionstyle}" not in result
+    assert r"\end{descriptionstyle}" not in result
+    assert "Some description text." in result
+
+
 def test_replace_environments_cventryskills_removed():
     text = textwrap.dedent(r"""
         \begin{cventryskills}

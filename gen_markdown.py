@@ -216,7 +216,7 @@ def strip_preamble(text):
 def replace_environments(text):
     """Replace custom awesome-cv environments with standard LaTeX or markdown."""
     # Remove wrapper-only environments
-    for env in ("cventries", "cvsentence", "cvhonors", "cvskills", "cvparagraph"):
+    for env in ("cventries", "cvsentence", "cvhonors", "cvskills", "cvparagraph", "descriptionstyle"):
         text = re.sub(rf"\\begin\{{{env}\}}", "", text)
         text = re.sub(rf"\\end\{{{env}\}}", "", text)
 
