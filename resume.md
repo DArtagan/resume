@@ -17,9 +17,10 @@ Flask · SQLAlchemy · PostgreSQL · Terraform · GitHub Actions · Docker · Ni
 Boston, Massachusetts | March 2021 -- November 2025
 
 Tech lead for the software team behind a HIPAA-compliant pathogen
-surveillance platform -- initially for COVID-19 in K-12 classrooms, then
-multipathogen biosurveillance across 11 international airports (126
-origin countries covered). 15M+ samples processed, \$733M revenue.
+surveillance platform -- initially for COVID-19 in thousands of K-12
+classrooms & lab partners across 18 states, then multipathogen
+biosurveillance across 11 international airports (126 origin countries).
+15M+ samples processed, \$733M revenue.
 
 - Led a multi-year platform evolution from single-pathogen COVID testing
   to multipathogen biosurveillance -- refactoring live production
@@ -84,12 +85,9 @@ Littleton, Colorado | September 2014 -- September 2017
 - Built a Python/LaTeX-based engine for creating NASA deliverables,
   cutting months of paperwork for engineers (per deliverable) to a day.
 
-- Served as a subject matter expert for the flight software verification
+- Served as a subject matter expert on the flight software verification
   automation tiger team, sharing processes established while automating
   ground.
-
-- Built a recursive-descent compiler for a templating language similar
-  to Jinja2.
 
 **Air Sciences, Inc.** -- Network Administrator (intern & part-time) |
 November 2011 -- March 2014
@@ -105,8 +103,8 @@ graphics, audio, video | August 2010 -- April 2014
 Economics minors**\
 Golden, Colorado | December 2013
 
-Capstone: NASA Lunabotics Competition: a full-size regolith collecting
-robot and competed with international teams at the Kennedy Space Center.
+Capstone: NASA Lunabotics Competition: built a regolith mining robot and
+competed with international teams at the Kennedy Space Center.
 
 # Projects
 
