@@ -7,7 +7,7 @@ Phone: (+1) 720-663-9455 | Email: william@weiskopf.me | GitHub: github.com/darta
 
 # Skills
 
-Flask · SQLAlchemy · PostgreSQL · Terraform · GitHub Actions · Docker · Nix · AWS EC2/S3/CloudFront · Auth0 · Aptible · Grafana · New Relic · Heap · Python · Kubernetes & Kustomize · Jenkins Pipelines · Prefect · Node.js (Express & Vue) · Alembic · MS SQL Server · GraphQL · Python packaging · Pytest · LaTeX · Sphinx · Linux · Vim · Perforce · JIRA · Jenkins · Agile · Test-driven development · Elastic stack · Proxmox · Kubernetes · ZFS · Ansible · Samba · Mumble · Plex · Borg backup · Beets · NGINX
+Flask · SQLAlchemy · PostgreSQL · Terraform · GitHub Actions · Docker · Nix · AWS EC2/S3/CloudFront · Auth0 · Aptible · Grafana · New Relic · Heap · Python · Kubernetes & Kustomize · Jenkins Pipelines · Prefect · Node.js (Express & Vue) · Alembic · MS SQL Server · GraphQL · Python packaging · Pytest · LaTeX · Sphinx · Linux · Vim · Perforce · JIRA · Jenkins · Agile · Test-driven development · Elastic stack · OpenTofu/Terraform · Prometheus/Loki/Grafana · Flux CD · SOPS secrets · ZFS · TLS · Talos Linux · Proxmox · CoreDNS · Tailscale · OpenEBS
 
 # Experience
 
@@ -97,17 +97,18 @@ graphics, audio, video | August 2010 -- April 2014
 
 # Education
 
-**Colorado School of Mines (CSM)** -- B.S. Engineering, Mechanical
-Emphasis --- Computer Science and Economics minors | December 2013
+**Colorado School of Mines** -- B.S. Engineering, Mechanical Emphasis
+--- Computer Science and Economics minors | December 2013
 
 Capstone: NASA Lunabotics Competition: built a regolith mining robot and
 competed with international teams at the Kennedy Space Center.
 
 # Projects
 
-## Extensive Homelab
+## Private Infrastructure Cloud
 
 2015 -- Present
 
-Homelab for experimenting with containers, virtualization, and services
--- with archive-class robust file-integrity protections.
+Architected a multi-layer, GitOps-driven platform from bare-metal
+through immutable Kubernetes - hosting 24+ services. Archive-class file
+integrity.
