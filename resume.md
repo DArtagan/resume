@@ -1,6 +1,6 @@
 # William H. Weiskopf, IV
 
-Cambridge, Massachusetts, 02139 · United States of America
+Cambridge, Massachusetts · United States of America
 
 Phone: (+1) 720-663-9455 | Email: william@weiskopf.me | GitHub: github.com/dartagan | LinkedIn: linkedin.com/in/whweiskopf
 
@@ -19,8 +19,8 @@ Boston, Massachusetts | March 2021 -- November 2025
 Tech lead for a HIPAA-compliant pathogen surveillance platform --
 initially for COVID-19 in thousands of K-12 classrooms with lab partners
 across 18 states, then multipathogen biosurveillance across 11
-international airports (126 origin countries). 15M+ samples processed,
-\$733M revenue.
+international airports (126 origin countries) -- a platform that
+processed 15M+ samples and underpinned \$733M in revenue.
 
 - Led a multi-year platform evolution from single-pathogen COVID testing
   to multipathogen biosurveillance -- refactoring live production
@@ -32,10 +32,10 @@ international airports (126 origin countries). 15M+ samples processed,
   one-to-many relationships -- enabling multi-panel testing without
   combinatorial data duplication.
 
-- Grew from senior IC to de facto team lead for a team of \~11 --
-  running ceremonies, managing stakeholders, and shielding the team from
-  organizational churn. Transitioned to a traditional tech lead role
-  when a dedicated manager was hired.
+- Led a team of \~11 as interim team lead through a period of rapid
+  organizational change -- running ceremonies, managing stakeholders,
+  and keeping engineers focused on delivery; transitioned to a dedicated
+  tech lead role once a manager was hired.
 
 - DevOps: rebuilt CI/CD pipelines around Docker with GitHub Actions,
   codified infrastructure in Terraform (Auth0, AWS, Aptible, supporting
@@ -51,20 +51,20 @@ international airports (126 origin countries). 15M+ samples processed,
 **Senior Software Engineer**\
 Boston, Massachusetts | October 2017 -- February 2021
 
-Oliver Wyman is a consulting company, where I had the opportunity to
-work across a broad range of projects and roles. Some highlights below:
+Software engineering across a broad range of projects and roles at a
+top-tier management consulting firm.
 
-- DevOps: wrote idiomatic containers, stood up many projects with CI/CD
-  into Kubernetes. Member of Special Interest Group to spread best
-  practices. Synthesized an analytics stack to give consulting teams a
-  platform for development, workflow scheduling, data operations, and
-  execution.
+- DevOps: wrote idiomatic containers, stood up CI/CD into Kubernetes
+  across Digital's project portfolio. Member of a Special Interest Group
+  spreading DevOps best practices. Synthesized an analytics stack to
+  give consulting teams a platform for development, workflow scheduling,
+  data operations, and execution.
 
 - Webservices: primarily backends for analytics and database operations,
   interfaced with as REST and GraphQL API services. Developed a system
   that continuously collects & collates data on all of Digital
   projects/assets -- providing InfoSec auditability, surfacing lost
-  items, and decreasing seek time for the Sustaining organization.
+  items, and decreasing seek time for the sustaining teams.
 
 - Data infrastructure: built tooling for consultants to use in ETL,
   workflow automation, schema management, and computational scaling.
@@ -89,16 +89,10 @@ Littleton, Colorado | September 2014 -- September 2017
   automation tiger team, sharing processes established while automating
   ground.
 
-**Air Sciences, Inc.** -- Network Administrator (intern & part-time) |
-November 2011 -- March 2014
-
-**CSM Alumni Association** -- Software Developer -- Website, newsletter,
-graphics, audio, video | August 2010 -- April 2014
-
 # Education
 
 **Colorado School of Mines** -- B.S. Engineering, Mechanical Emphasis
---- Computer Science and Economics minors | December 2013
+--- CS & Economics minors | December 2013
 
 Capstone: NASA Lunabotics Competition: built a regolith mining robot and
 competed with international teams at the Kennedy Space Center.

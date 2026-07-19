@@ -214,8 +214,8 @@
 %-------------------------------------------------------------------------------
 % Configure styles for each CV elements
 % For fundamental structures
-\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{32pt}{1em}\headerfontlight\color{graytext} #1}}
-\newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
+\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{28pt}{1em}\headerfontlight\bfseries\color{text} #1}}
+\newcommand*{\headerlastnamestyle}[1]{{\fontsize{28pt}{1em}\headerfontlight\bfseries\color{text} #1}}
 %\newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfontlight\color{graytext} #1}}
 \newcommand*{\headerpositionstyle}[1]{{\fontsize{7.6pt}{1em}\bodyfont\scshape\color{awesome} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\fontsize{8pt}{1em}\headerfont\itshape\color{lighttext} #1}}
@@ -227,11 +227,11 @@
 \newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
 
 % For elements of entry
-\newcommand*{\entrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\entrypositionstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\scshape\color{graytext} #1}}
-\newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
-\newenvironment{descriptionstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}{}
+\newcommand*{\entrytitlestyle}[1]{{\fontsize{11pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\entrypositionstyle}[1]{{\fontsize{11pt}{1em}\bodyfont\scshape\color{darktext} #1}}
+\newcommand*{\entrydatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\slshape\color{darktext} #1}}
+\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\slshape\color{darktext} #1}}
+\newenvironment{descriptionstyle}{\fontsize{9.5pt}{1.05em}\bodyfontlight\upshape\color{text}}{}
 
 % For elements of subentry
 \newcommand*{\subentrytitlestyle}[1]{{\fontsize{8pt}{1em}\bodyfont\mdseries\color{graytext} #1}}
@@ -552,16 +552,17 @@
 
 % Define an environment for cventryskill
 \newenvironment{cventryskills}{%
-  \vspace{-5.0mm}
+  \vspace{-4.5mm}
   \begin{justify}
   \begin{descriptionstyle}
+  \fontsize{9pt}{1em}\selectfont
   \faPencil\enspace
       \begin{enumerate*}[label={}, itemjoin={~$\cdot$~}, afterlabel={},]
 }{%
   \end{enumerate*}
   \end{descriptionstyle}
   \end{justify}
-  \vspace{2.0mm}
+  \vspace{2.5mm}
 }
 
 % Define an environment for cvsubentry
@@ -641,7 +642,19 @@
   \begin{justify}
 }{%
   \end{justify}
-  \vspace{5.0mm}
+  \vspace{4.0mm}
+}
+
+% Define an environment for a single-paragraph entry description that is the
+% last content before the skills line (for cventry). Opens like cvsentence so
+% it sits correctly under the title, and closes like cvitems so the space
+% before the following cventryskills matches bulleted entries exactly.
+\newenvironment{cvdesc}{%
+  \vspace{-4.0mm}
+  \begin{justify}
+}{%
+  \end{justify}
+  \vspace{-4.0mm}
 }
 
 % Define an environment for cvitems(for cventry)

@@ -287,6 +287,15 @@ def test_replace_environments_removes_cvsentence_midline():
     assert "Intro text." in result
 
 
+def test_replace_environments_removes_cvdesc_midline():
+    # cvdesc wraps a single-paragraph entry description, inside cventry arg
+    text = r"\cventry{pos}{title}{loc}{date}{%\begin{cvdesc}Project blurb.\end{cvdesc}}"
+    result = replace_environments(text)
+    assert r"\begin{cvdesc}" not in result
+    assert r"\end{cvdesc}" not in result
+    assert "Project blurb." in result
+
+
 def test_replace_environments_cvitems_to_itemize():
     text = r"\begin{cvitems}\item foo\end{cvitems}"
     result = replace_environments(text)
