@@ -71,7 +71,7 @@ top-tier management consulting firm.
   Built out a migration-based schema framework for a project with a
   major grocery retailer, eliminating database down-time.
 
-- Sustaining: lead long-term operations for five projects in the mature
+- Sustaining: led long-term operations for five projects in the mature
   phase of their lifecycle.
 
 ## Lockheed Martin: Space Systems
