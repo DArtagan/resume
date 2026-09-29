@@ -75,5 +75,8 @@
     "resume:pdf" = {
       exec = "SOURCE_DATE_EPOCH=${toString builtins.currentTime} tectonic resume.tex";
     };
+    "resume:cover-letter" = {
+      exec = "SOURCE_DATE_EPOCH=${toString builtins.currentTime} tectonic cover_letter.tex";
+    };
   };
 }
