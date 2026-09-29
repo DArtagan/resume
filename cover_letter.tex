@@ -1,6 +1,6 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
-% ome CV LaTeX Template for CV/Resume
+% Awesome CV LaTeX Template for Cover Letter
 %
 % The template for this document is by:
 % Claud D. Park <posquit0.bj@gmail.com>
@@ -9,13 +9,33 @@
 % Author:
 % William H. Weiskopf <william@weiskopf.me>
 %
+% This is a generic template: it holds no company-specific content. A specific
+% letter lives outside this (public) repo, defines any of the \Letter... macros
+% below, then \input{cover_letter.tex}, compiling with this repo on the TeX search path
+% (e.g. `tectonic -Z search-path=<this repo> letter.tex`). Undefined macros fall back to the
+% placeholders here, so this file also compiles on its own as a sample.
+%
 
+%-------------------------------------------------------------------------------
+% LETTER CONTENT (defaults; override before \input-ing this file)
+%-------------------------------------------------------------------------------
+\providecommand{\LetterRecipientName}{Hiring Team}
+\providecommand{\LetterRecipientAddress}{Company\\City, State}
+\providecommand{\LetterDate}{\today}
+\providecommand{\LetterTitle}{Application for Staff Software Engineer}
+\providecommand{\LetterOpening}{Dear Hiring Team,}
+\providecommand{\LetterClosing}{Sincerely,}
+\providecommand{\LetterBody}{%
+  [Why this company: what draws me to its mission and problems, specifically.]
+
+  [Why me: one or two stories that match the role.]
+
+  [Close: what I'd like to talk about next.]
+}
 
 %-------------------------------------------------------------------------------
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
-% A4 paper size by default, use 'letterpaper' for US letter
-%\documentclass[11pt, a4paper]{awesome-cv}
 \documentclass[11pt, letterpaper]{awesome-cv}
 
 % Configure page margins with geometry
@@ -25,18 +45,7 @@
 \fontdir[fonts/]
 
 % Color for highlights
-% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
-%                 awesome-nephritis, awesome-concrete, awesome-darknight
 \colorlet{awesome}{awesome-red}
-% Uncomment if you would like to specify your own color
-% \definecolor{awesome}{HTML}{CA63A8}
-
-% Colors for text
-% Uncomment if you would like to specify your own color
-% \definecolor{darktext}{HTML}{414141}
-% \definecolor{text}{HTML}{333333}
-% \definecolor{graytext}{HTML}{5D5D5D}
-% \definecolor{lighttext}{HTML}{999999}
 
 % Set false if you don't want to highlight section with awesome color
 \setbool{acvSectionColorHighlight}{true}
@@ -44,28 +53,17 @@
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
+\input{header.tex}
 
 %-------------------------------------------------------------------------------
-%	PERSONAL INFORMATION
-%	Comment any of the lines below if they are not required
+%  LETTER INFORMATION
 %-------------------------------------------------------------------------------
-\name{William H.}{Weiskopf}{, IV}
-\position{Software Engineer}
-\address{14607 West 62nd Avenue{\enskip\cdotp\enskip}Arvada, Colorado, 80004{\enskip\cdotp\enskip}United States of America}
-
-\mobile{(+1) 720-663-9455} 
-\email{william@weiskopf.me}
-% \homepage{william.weiskopf.me}
-\github{dartagan}
-\linkedin{whweiskopf}
-% \stackoverflow{SO-id}{SO-name}
-% \twitter{@twit}
-% \skype{skype-id}
-% \reddit{reddit-id}
-% \extrainfo{extra informations}
-
-\quote{``If you want to build a ship, don't herd people together to collect wood and don't assign them tasks and work, but rather\\teach them to long for the endless immensity of the sea." -Antoine de Saint-Exup\'{e}ry}
-
+\recipient{\LetterRecipientName}{\LetterRecipientAddress}
+\letterdate{\LetterDate}
+\lettertitle{\LetterTitle}
+\letteropening{\LetterOpening}
+\letterclosing{\LetterClosing}
+\letterenclosure[Attached]{Résumé}
 
 %-------------------------------------------------------------------------------
 \begin{document}
@@ -74,49 +72,23 @@
 \makecvheader
 
 % Print the footer with 3 arguments(<left>, <center>, <right>)
-% Leave any of these blank if they are not needed
 \makecvfooter
-  {\today}
-  {William H. Weiskopf~~~·~~~Résumé}
-  {\thepage}
+{\today}
+{}
+{}
 
-
-%-------------------------------------------------------------------------------
-%	CV/RESUME CONTENT
-%	Each section is imported separately, open each file in turn to modify content
-%-------------------------------------------------------------------------------
-
-\vspace{5em}
-
-Blockchain technology is of interest to me: creating distributed ledgers without risk of trusting or storing in any single authority.  What is much more than a passing interest: Ethereum's smart contracts.  Finally, we can move beyond the risk of third parties.  Finally, applications can run without censorship or downtime.  It's such a powerful paradigm and I want to be a part of its early growth.  You don't need me to expound on the features of Ethereum though.  It is only important that you understand that I will spend my most valuable of resources pursuing this: my time and creativity.  I want to create the infrastructure that cities run on.  I want disrupt the systems people use every day, and to do it so smoothly that they can't imagine how it used to be.  I intend to pursue this program.
-
-A little bit about me: I love distributed systems and I geek out for version control. My friends listen to me wax poetically about the explicit beauty of Python, though I look forward to developing in newer languages and frameworks like Julia and React.  I dabble in DevOps and appreciate the importance of packaging. Listening is my absolute strength and I give only one form of attention: undivided.  That goes for individuals and towards projects. 
-
-Allow me to philosophize over questions of architecture, give me the latitude and freedom to explore ideas and I'll give you an exquisite system. Research, research, research - I prefer to synthesize different constructs into one whole, taking from the brilliant work of others or creating my own as needed; always through a thorough consideration of all components and their alternatives. A few bullets on me:
-
-\begin{itemize}[noitemsep]
-  \item Project driven
-  \item Elegant forms over minute details
-  %\item New project architecture over maintenance
-  \item Open source
-  \item Distributed systems
-  \item Proven best practices
-\end{itemize}
-
-I hope you will find me a good fit for this program,
-
-William
-
-  
-% \input{resume/summary.tex}
-%\input{resume/experience.tex}
-%\input{resume/education.tex}
-%\input{resume/projects.tex}
-%\input{resume/honors.tex}
-%\input{resume/presentation.tex}
-%\input{resume/writing.tex}
-%\input{resume/committees.tex}
-
+% Print the title with above letter informations
+\makelettertitle
 
 %-------------------------------------------------------------------------------
+%  LETTER CONTENT
+%-------------------------------------------------------------------------------
+\begin{cvletter}
+  \LetterBody
+\end{cvletter}
+
+%-------------------------------------------------------------------------------
+% Print the signature and enclosures with above letter informations
+\makeletterclosing
+
 \end{document}
