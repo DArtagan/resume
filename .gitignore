@@ -35,3 +35,6 @@ devenv.local.yaml
 
 # Python
 __pycache__/
+
+# Cover letter: generic sample; company-specific PDFs live outside this repo
+cover_letter.pdf
