@@ -183,7 +183,7 @@ def strip_preamble(text):
     text = re.sub(r"\\fontdir\[.*?\]", "", text)
     text = re.sub(r"\\colorlet\{.*?\}\{.*?\}", "", text)
     text = re.sub(r"\\setbool\{.*?\}\{.*?\}", "", text)
-    text = re.sub(r"\\renewcommand\{\\acvHeaderSocialSep\}\{.*?\}", "", text)
+    text = re.sub(r"\\renewcommand\{\\acv\w+\}\{.*?\}", "", text)
     text = re.sub(r"\\makecvheader", "", text)
     text = re.sub(
         r"\\makecvfooter\s*\{.*?\}\s*\{.*?\}\s*\{.*?\}", "", text, flags=re.DOTALL

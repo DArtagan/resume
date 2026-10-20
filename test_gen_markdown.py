@@ -227,6 +227,13 @@ def test_strip_preamble_removes_documentclass():
     assert r"\documentclass" not in result
 
 
+def test_strip_preamble_removes_any_acv_layout_override():
+    text = r"\renewcommand{\acvHeaderAfterSocialSkip}{5mm}" + "\nBody"
+    result = strip_preamble(text)
+    assert r"\acvHeaderAfterSocialSkip" not in result
+    assert "Body" in result
+
+
 def test_strip_preamble_removes_geometry():
     result = strip_preamble(SAMPLE_PREAMBLE_FULL)
     assert r"\geometry" not in result
@@ -761,8 +768,7 @@ def full_pipeline(tex_source: str) -> str:
 
 def test_full_resume_sections_present():
     md = full_pipeline(latexpand("resume.tex"))
-    assert "# Experience" in md
-    assert "# Education" in md
+    assert "# Experience & Education" in md
     assert "# Projects" in md
 
 
@@ -869,7 +875,8 @@ def test_main_with_file_arg_dump_latex():
         check=True,
     )
     assert r"\documentclass{article}" in result.stdout
-    assert r"\section{Experience}" in result.stdout
+    assert r"\section{Experience & Education}" in result.stdout
+    assert r"\renewcommand" not in result.stdout
 
 
 # ---------------------------------------------------------------------------

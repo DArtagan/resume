@@ -559,8 +559,8 @@
   \faPencil\enspace
       \begin{enumerate*}[label={}, itemjoin={~$\cdot$~}, afterlabel={},]
 }{%
-  \end{enumerate*}
-  \end{descriptionstyle}
+  \end{enumerate*}%
+  \end{descriptionstyle}%
   \end{justify}
   \vspace{2.5mm}
 }

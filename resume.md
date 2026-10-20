@@ -7,9 +7,9 @@ Phone: (+1) 720-663-9455 | Email: william@weiskopf.me | GitHub: github.com/darta
 
 # Skills
 
-Flask · SQLAlchemy · PostgreSQL · Terraform · GitHub Actions · Docker · Nix · AWS EC2/S3/CloudFront · Auth0 · Aptible · Grafana · New Relic · Heap · Python · Kubernetes & Kustomize · Jenkins Pipelines · Prefect · Node.js (Express & Vue) · Alembic · MS SQL Server · GraphQL · Python packaging · Pytest · LaTeX · Sphinx · Linux · Vim · Perforce · JIRA · Jenkins · Agile · Test-driven development · Elastic stack · OpenTofu/Terraform · Prometheus/Loki/Grafana · Flux CD · SOPS secrets · ZFS · TLS · Talos Linux · Proxmox · CoreDNS · Tailscale · OpenEBS
+Flask · SQLAlchemy · PostgreSQL · Terraform · GitHub Actions · Docker · Nix · AWS EC2/S3/CloudFront · Auth0 · Aptible · Grafana · New Relic · Cursor · Python · Kubernetes & Kustomize · Jenkins Pipelines · Prefect · Node.js (Express & Vue) · Alembic · MS SQL Server · GraphQL · Python packaging · Pytest · LaTeX · Sphinx · Linux · Vim · Perforce · JIRA · Jenkins · Agile · Test-driven development · Elastic stack · Pi · Claude Code · Context engineering · Agent guardrails · Ollama · FastAPI · Claude API · Whisper · OpenTofu/Terraform · Prometheus/Loki/Grafana · Flux CD · SOPS secrets · ZFS · TLS · Talos Linux · Proxmox · CoreDNS · Tailscale · OpenEBS
 
-# Experience
+# Experience & Education
 
 ## Ginkgo Bioworks: Biosecurity
 
@@ -17,10 +17,10 @@ Flask · SQLAlchemy · PostgreSQL · Terraform · GitHub Actions · Docker · Ni
 Boston, Massachusetts | March 2021 -- November 2025
 
 Tech lead for a HIPAA-compliant pathogen surveillance platform --
-initially for COVID-19 in thousands of K-12 classrooms with lab partners
-across 18 states, then multipathogen biosurveillance across 11
-international airports (126 origin countries) -- a platform that
-processed 15M+ samples and underpinned \$733M in revenue.
+COVID-19 in thousands of K-12 classrooms across 18 states, then
+multipathogen biosurveillance at 11 international airports (126 origin
+countries) -- that processed 15M+ samples and underpinned \$733M in
+revenue.
 
 - Led a multi-year platform evolution from single-pathogen COVID testing
   to multipathogen biosurveillance -- refactoring live production
@@ -51,23 +51,15 @@ processed 15M+ samples and underpinned \$733M in revenue.
 **Senior Software Engineer**\
 Boston, Massachusetts | October 2017 -- February 2021
 
-Software engineering across a broad range of projects and roles at a
-top-tier management consulting firm.
-
 - DevOps: wrote idiomatic containers, stood up CI/CD into Kubernetes
-  across Digital's project portfolio. Member of a Special Interest Group
-  spreading DevOps best practices. Synthesized an analytics stack to
-  give consulting teams a platform for development, workflow scheduling,
-  data operations, and execution.
+  across Digital's project portfolio.
 
-- Webservices: primarily backends for analytics and database operations,
-  interfaced with as REST and GraphQL API services. Developed a system
-  that continuously collects & collates data on all of Digital
-  projects/assets -- providing InfoSec auditability, surfacing lost
-  items, and decreasing seek time for the sustaining teams.
+- Webservices: REST and GraphQL backends for analytics; built a system
+  cataloguing all of Digital's projects and assets for InfoSec
+  auditability.
 
-- Data infrastructure: built tooling for consultants to use in ETL,
-  workflow automation, schema management, and computational scaling.
+- Data infrastructure: designed a stack for consulting teams: ETL,
+  workflow scheduling, schema management, and computational scaling.
   Built out a migration-based schema framework for a project with a
   major grocery retailer, eliminating database down-time.
 
@@ -85,12 +77,6 @@ Littleton, Colorado | September 2014 -- September 2017
 - Built a Python/LaTeX-based engine for creating NASA deliverables,
   cutting months of paperwork for engineers (per deliverable) to a day.
 
-- Served as a subject matter expert on the flight software verification
-  automation tiger team, sharing processes established while automating
-  ground.
-
-# Education
-
 **Colorado School of Mines** -- B.S. Engineering, Mechanical Emphasis
 --- CS & Economics minors | December 2013
 
@@ -99,10 +85,32 @@ competed with international teams at the Kennedy Space Center.
 
 # Projects
 
+## AI-Assisted Engineering
+
+2025 -- Present
+
+- Designed a review workflow for agentic development (Pi, Claude Code):
+  a spec per project, a pull request reviewed thread by thread, and
+  offline checks every change must pass. 1,100+ commits across 15
+  repositories; 4 pull requests merged upstream (including nixpkgs).
+
+- Directed an agent through a phased build of a disc-ripping pipeline:
+  passed a Blu-ray drive through three virtualization layers (Proxmox
+  hypervisor, Talos VM, Kubernetes device plugin & pod), then specified
+  and verified CD, DVD and Blu-ray edge cases across sessions.
+
+## reelbarrow
+
+2026 -- Present
+
+- Building a service that files ripped discs into a video library, using
+  an LLM (Claude) to match Whisper transcripts to episodes. Each
+  automatic filing needs a second, independent signal, because the model
+  can be consistently and confidently wrong.
+
 ## Private Infrastructure Cloud
 
 2015 -- Present
 
-Architected a multi-layer, GitOps-driven platform from bare-metal
-through immutable Kubernetes - hosting 24+ services. Archive-class file
-integrity.
+Architected a GitOps-driven platform from bare metal through immutable
+Kubernetes, hosting 24+ services, with archive-class file integrity.
