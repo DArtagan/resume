@@ -7,9 +7,9 @@ Phone: (+1) 720-663-9455 | Email: william@weiskopf.me | GitHub: github.com/darta
 
 # Skills
 
-Flask · SQLAlchemy · PostgreSQL · Terraform · GitHub Actions · Docker · Nix · AWS EC2/S3/CloudFront · Auth0 · Aptible · Grafana · New Relic · Cursor · Python · Kubernetes & Kustomize · Jenkins Pipelines · Prefect · Node.js (Express & Vue) · Alembic · MS SQL Server · GraphQL · Python packaging · Pytest · LaTeX · Sphinx · Linux · Vim · Perforce · JIRA · Jenkins · Agile · Test-driven development · Elastic stack · Pi · Claude Code · Context engineering · Agent guardrails · Ollama · FastAPI · Claude API · Whisper · OpenTofu/Terraform · Prometheus/Loki/Grafana · Flux CD · SOPS secrets · ZFS · TLS · Talos Linux · Proxmox · CoreDNS · Tailscale · OpenEBS
+Flask · SQLAlchemy · PostgreSQL · Terraform · GitHub Actions · Docker · Nix · AWS EC2/S3/CloudFront · Auth0 · Aptible · Grafana · New Relic · Cursor · Python · Kubernetes & Kustomize · Jenkins Pipelines · Prefect · Node.js (Express & Vue) · Alembic · MS SQL Server · GraphQL · Claude Code · Pi coding agent · Claude API · Whisper · Local LLMs (Ollama) · FastAPI · OpenTofu/Terraform · Prometheus/Loki/Grafana · Flux CD · SOPS secrets · ZFS · TLS · Talos Linux · Proxmox · CoreDNS · Tailscale · OpenEBS
 
-# Experience & Education
+# Experience
 
 ## Ginkgo Bioworks: Biosecurity
 
@@ -17,9 +17,9 @@ Flask · SQLAlchemy · PostgreSQL · Terraform · GitHub Actions · Docker · Ni
 Boston, Massachusetts | March 2021 -- November 2025
 
 Tech lead for a HIPAA-compliant pathogen surveillance platform --
-COVID-19 in thousands of K-12 classrooms across 18 states, then
-multipathogen biosurveillance at 11 international airports (126 origin
-countries) -- that processed 15M+ samples and underpinned \$733M in
+COVID-19 in thousands of K-12 schools, with lab partners in 18 states,
+then multipathogen surveillance at 11 international airports (126 origin
+countries) -- processing 15M+ samples and underpinning \$733M in
 revenue.
 
 - Led a multi-year platform evolution from single-pathogen COVID testing
@@ -58,10 +58,8 @@ Boston, Massachusetts | October 2017 -- February 2021
   cataloguing all of Digital's projects and assets for InfoSec
   auditability.
 
-- Data infrastructure: designed a stack for consulting teams: ETL,
-  workflow scheduling, schema management, and computational scaling.
-  Built out a migration-based schema framework for a project with a
-  major grocery retailer, eliminating database down-time.
+- Data infrastructure: ETL and schema tooling; built a migration-based
+  schema framework for a major grocery retailer, eliminating downtime.
 
 - Sustaining: led long-term operations for five projects in the mature
   phase of their lifecycle.
@@ -77,6 +75,11 @@ Littleton, Colorado | September 2014 -- September 2017
 - Built a Python/LaTeX-based engine for creating NASA deliverables,
   cutting months of paperwork for engineers (per deliverable) to a day.
 
+- Subject-matter expert on the flight software verification automation
+  tiger team, sharing processes proven on ground software.
+
+# Education
+
 **Colorado School of Mines** -- B.S. Engineering, Mechanical Emphasis
 --- CS & Economics minors | December 2013
 
@@ -89,28 +92,29 @@ competed with international teams at the Kennedy Space Center.
 
 2025 -- Present
 
-- Designed a review workflow for agentic development (Pi, Claude Code):
-  a spec per project, a pull request reviewed thread by thread, and
-  offline checks every change must pass. 1,100+ commits across 15
-  repositories; 4 pull requests merged upstream (including nixpkgs).
+- Designed a review workflow for agentic development: a spec per
+  project, a pull request reviewed thread by thread, and offline checks
+  every change must pass. 4 pull requests merged upstream (3 to
+  nixpkgs).
 
-- Directed an agent through a phased build of a disc-ripping pipeline:
-  passed a Blu-ray drive through three virtualization layers (Proxmox
-  hypervisor, Talos VM, Kubernetes device plugin & pod), then specified
-  and verified CD, DVD and Blu-ray edge cases across sessions.
+- Diagnosed passthrough of a Blu-ray drive across three virtualization
+  layers (Proxmox hypervisor, Talos VM, Kubernetes device plugin & pod),
+  then specified a phased ripping pipeline and verified its CD, DVD and
+  Blu-ray edge cases, with an agent implementing each phase.
 
-## reelbarrow
-
-2026 -- Present
-
-- Building a service that files ripped discs into a video library, using
-  an LLM (Claude) to match Whisper transcripts to episodes. Each
-  automatic filing needs a second, independent signal, because the model
-  can be consistently and confidently wrong.
+- reelbarrow: matches Whisper transcripts of ripped discs to episodes
+  using Claude. From titles alone it scored 6--9 of 13, repeating one
+  wrong answer at 0.75--0.85 confidence; from synopses, 13 of 13. So
+  every automatic filing needs a second, independent signal.
 
 ## Private Infrastructure Cloud
 
 2015 -- Present
 
-Architected a GitOps-driven platform from bare metal through immutable
-Kubernetes, hosting 24+ services, with archive-class file integrity.
+- Architected a GitOps-driven platform from bare metal through immutable
+  Kubernetes, hosting 24+ services, with archive-class file integrity.
+
+- Redesigned backups after an audit found four silent failures (offsite
+  replication had failed for seven months): a phased 3-2-1-0 spec,
+  append-only restic, pull-only replication, per-dataset freshness
+  checks. Pruned 30,404 snapshots to 1,083, reclaiming 2.32 TiB.
