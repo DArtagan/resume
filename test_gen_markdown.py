@@ -768,7 +768,8 @@ def full_pipeline(tex_source: str) -> str:
 
 def test_full_resume_sections_present():
     md = full_pipeline(latexpand("resume.tex"))
-    assert "# Experience & Education" in md
+    assert "# Experience" in md
+    assert "# Education" in md
     assert "# Projects" in md
 
 
@@ -875,7 +876,7 @@ def test_main_with_file_arg_dump_latex():
         check=True,
     )
     assert r"\documentclass{article}" in result.stdout
-    assert r"\section{Experience & Education}" in result.stdout
+    assert r"\section{Experience}" in result.stdout
     assert r"\renewcommand" not in result.stdout
 
 
