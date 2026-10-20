@@ -11,19 +11,19 @@
   %---------------------------------------------------------
   \cventry%
   {} % Affiliation/role :: Project organization
-  {AI-Assisted Engineering} % Organization/group :: Project name
+  {reelbarrow \& AI-Assisted Engineering} % Organization/group :: Project name
   {} % Location
   {2025 \-- Present} % Date(s)
   {%
     \begin{cvitems}
     \item {Designed a review workflow for agentic development: a spec per project, a pull request reviewed thread by thread, and offline checks every change must pass. 4 pull requests merged upstream (3 to nixpkgs).}
     \item {Diagnosed passthrough of a Blu-ray drive across three virtualization layers (Proxmox hypervisor, Talos VM, Kubernetes device plugin \& pod), then specified a phased ripping pipeline and verified its CD, DVD and Blu-ray edge cases, with an agent implementing each phase.}
-    \item {reelbarrow: matches Whisper transcripts of ripped discs to episodes using Claude. From titles alone it scored 6\--9 of 13, repeating one wrong answer at 0.75\--0.85 confidence; from synopses, 13 of 13. So every automatic filing needs a second, independent signal.}
+    \item {Building a service that files ripped discs into a video library, using an LLM (Claude) to match Whisper transcripts to episodes. Each automatic filing needs a second, independent signal, because the model can be consistently and confidently wrong.}
     \end{cvitems}
   }
   \begin{cventryskills}
+  \item Pi agent harness
   \item Claude Code
-  \item Pi coding agent
   \item Claude API
   \item Whisper
   \item Local LLMs (Ollama)

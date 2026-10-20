@@ -7,7 +7,7 @@ Phone: (+1) 720-663-9455 | Email: william@weiskopf.me | GitHub: github.com/darta
 
 # Skills
 
-Flask · SQLAlchemy · PostgreSQL · Terraform · GitHub Actions · Docker · Nix · AWS EC2/S3/CloudFront · Auth0 · Aptible · Grafana · New Relic · Cursor · Python · Kubernetes & Kustomize · Jenkins Pipelines · Prefect · Node.js (Express & Vue) · Alembic · MS SQL Server · GraphQL · Claude Code · Pi coding agent · Claude API · Whisper · Local LLMs (Ollama) · FastAPI · OpenTofu/Terraform · Prometheus/Loki/Grafana · Flux CD · SOPS secrets · ZFS · TLS · Talos Linux · Proxmox · CoreDNS · Tailscale · OpenEBS
+Flask · SQLAlchemy · PostgreSQL · Terraform · GitHub Actions · Docker · Nix · AWS EC2/S3/CloudFront · Auth0 · Aptible · Grafana · New Relic · Cursor · Python · Kubernetes & Kustomize · Jenkins Pipelines · Prefect · Node.js (Express & Vue) · Alembic · MS SQL Server · GraphQL · Pi agent harness · Claude Code · Claude API · Whisper · Local LLMs (Ollama) · FastAPI · OpenTofu/Terraform · Prometheus/Loki/Grafana · Flux CD · SOPS secrets · ZFS · TLS · Talos Linux · Proxmox · CoreDNS · Tailscale · OpenEBS
 
 # Experience
 
@@ -58,8 +58,9 @@ Boston, Massachusetts | October 2017 -- February 2021
   cataloguing all of Digital's projects and assets for InfoSec
   auditability.
 
-- Data infrastructure: ETL and schema tooling; built a migration-based
-  schema framework for a major grocery retailer, eliminating downtime.
+- Data infrastructure: ETL and workflow tooling. Built out a schema
+  migration framework for a major grocery retailer, eliminating
+  downtime.
 
 - Sustaining: led long-term operations for five projects in the mature
   phase of their lifecycle.
@@ -88,7 +89,7 @@ competed with international teams at the Kennedy Space Center.
 
 # Projects
 
-## AI-Assisted Engineering
+## reelbarrow & AI-Assisted Engineering
 
 2025 -- Present
 
@@ -102,10 +103,10 @@ competed with international teams at the Kennedy Space Center.
   then specified a phased ripping pipeline and verified its CD, DVD and
   Blu-ray edge cases, with an agent implementing each phase.
 
-- reelbarrow: matches Whisper transcripts of ripped discs to episodes
-  using Claude. From titles alone it scored 6--9 of 13, repeating one
-  wrong answer at 0.75--0.85 confidence; from synopses, 13 of 13. So
-  every automatic filing needs a second, independent signal.
+- Building a service that files ripped discs into a video library, using
+  an LLM (Claude) to match Whisper transcripts to episodes. Each
+  automatic filing needs a second, independent signal, because the model
+  can be consistently and confidently wrong.
 
 ## Private Infrastructure Cloud
 
