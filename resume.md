@@ -27,15 +27,17 @@ revenue.
   systems while preserving historical data, existing visualizations, and
   CDC reporting pipelines.
 
-- Designed the Results & Sample Refactor: decomposed a monolithic data
-  entity into three domain objects (sample, procedure, result) with
-  one-to-many relationships -- enabling multi-panel testing without
-  combinatorial data duplication.
+- Redesigned the core data model, splitting one monolithic record into
+  sample, procedure, and result: new panels, no duplicated data.
 
 - Led a team of \~11 as interim team lead through a period of rapid
   organizational change -- running ceremonies, managing stakeholders,
   and keeping engineers focused on delivery; transitioned to a dedicated
   tech lead role once a manager was hired.
+
+- Built the team's release process (code-freeze automation,
+  release-engineer rotation), on-call, and a DR exercise; mentored
+  junior engineers.
 
 - DevOps: rebuilt CI/CD pipelines around Docker with GitHub Actions,
   codified infrastructure in Terraform (Auth0, AWS, Aptible, supporting
@@ -67,7 +69,7 @@ Boston, Massachusetts | October 2017 -- February 2021
 
 ## Lockheed Martin: Space Systems
 
-**Software Engineer -- Orion: NASA's next manned spacecraft**\
+**Software Engineer -- Orion: NASA's next crewed spacecraft**\
 Littleton, Colorado | September 2014 -- September 2017
 
 - Principal architect in moving Orion ground software from pen and paper
