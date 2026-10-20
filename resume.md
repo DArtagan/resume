@@ -27,8 +27,8 @@ revenue.
   systems while preserving historical data, existing visualizations, and
   CDC reporting pipelines.
 
-- Redesigned the core data model, splitting one monolithic record into
-  sample, procedure, and result: new panels, no duplicated data.
+- Redesigned the core data model, decomposing a monolithic record into a
+  normalized three-tier relationship -- enabling multi-panel testing.
 
 - Led a team of \~11 as interim team lead through a period of rapid
   organizational change -- running ceremonies, managing stakeholders,
