@@ -7,7 +7,7 @@ Phone: (+1) 720-663-9455 | Email: william@weiskopf.me | GitHub: github.com/darta
 
 # Skills
 
-Flask · SQLAlchemy · PostgreSQL · Terraform · GitHub Actions · Docker · Nix · AWS EC2/S3/CloudFront · Auth0 · Aptible · Grafana · New Relic · Cursor · Python · Kubernetes & Kustomize · Jenkins Pipelines · Prefect · Node.js (Express & Vue) · Alembic · MS SQL Server · GraphQL · Pi agent harness · Claude Code · Claude API · Whisper · Local LLMs (Ollama) · FastAPI · OpenTofu/Terraform · Prometheus/Loki/Grafana · Flux CD · SOPS secrets · ZFS · TLS · Talos Linux · Proxmox · CoreDNS · Tailscale · OpenEBS
+Flask · SQLAlchemy · PostgreSQL · Terraform · GitHub Actions · Docker · Nix · AWS EC2/S3/CloudFront · Auth0 · Aptible · Grafana · New Relic · Cursor · Python · Kubernetes & Kustomize · Jenkins Pipelines · Prefect · Node.js (Express & Vue) · Alembic · MS SQL Server · GraphQL · Pi agent harness · Claude Code · Claude API · Whisper · Local LLMs (Ollama) · FastAPI · OpenTofu · Prometheus/Loki · Flux CD · SOPS secrets · ZFS · TLS · Talos Linux · Proxmox · CoreDNS · Tailscale · OpenEBS
 
 # Experience
 
